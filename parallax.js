@@ -13,7 +13,13 @@ const addMovement = function () {
         const image = section.querySelector("img")
         const content = section.querySelector("div")
 
-        image.style.transform = 'rotate(${distanceToSection / 100}deg)'
+        let rotation = distanceToSection / 100
+        let contentDist = -1 * distanceToSection / 2
+
+        image.style.transform = 'rotate(${rotation}deg)'
+
+        contentTag.style.top = '${contentDist}px'
+        contentTag.style.transform = 'rotate(${-1 * rotation}deg)'
     })
 }
 
